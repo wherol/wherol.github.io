@@ -1,0 +1,13 @@
+<footer>
+  <div class="container">
+    <p>&copy; {{ site.author }} {{ site.title }}</p>
+    <div class="contact-info">
+      {% for contact in site.data.contacts %}
+        <div class="contact-item">
+          <strong>{{ contact.name }}</strong>
+          <p>{{ contact.value }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; line-height: 1.6; color: #333; background: #f8f9fa; }
+    header { background: #2c3e50; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem; }
+    .logo { font-size: 1.5rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: #ecf0f1; text-decoration: none; transition: color 0.3s; }
+    nav a:hover { color: #3498db; }
+    .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    footer { background: #2c3e50; color: white; padding: 2rem 0; text-align: center; margin-top: 3rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .hero { background: linear-gradient(135deg, #3498db, #2c3e50); color: white; padding: 4rem 0; text-align: center; margin-bottom: 2rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .btn { display: inline-block; background: #e74c3c; color: white; padding: 0.8rem 2rem; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.3s; }
+    .btn:hover { background: #c0392b; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card h3 { color: #2c3e50; margin-bottom: 0.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+    .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-btn { background: #3498db; color: white; border: none; padding: 1rem 2rem; border-radius: 5px; cursor: pointer; font-size: 1rem; width: 100%; }
+    .form-btn:hover { background: #2980b9; }
+    .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .contact-item { text-align: center; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: block; }
+      nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #2c3e50; padding: 1rem; flex-direction: column; }
+      nav ul.show { display: flex; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  {% include header.html %}
+  <main>
+    {% if site.data.features %}
+      <section class="hero">
+        <div class="container">
+          <h1>{{ site.title }}</h1>
+          <p>{{ site.description }}</p>
+          <a href="#appointment" class="btn">预约服务</a>
+        </div>
+      </section>
+    {% endif %}
+    {% if page.content %}
+      {{ page.content }}
+    {% else %}
+      <div class="container">
+        {{ content }}
+      </div>
+    {% endif %}
+  </main>
+  {% include footer.html %}
+  <script>
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navUl = document.querySelector('nav ul');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => navUl.classList.toggle('show'));
+    }
+  </script>
+</body>
+</html>
