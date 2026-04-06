@@ -1,0 +1,30 @@
+title: 乌兰察布跃进卡车 4S 店
+description: 专业提供跃进卡车销售、维修、保养服务
+author: 跃进 4S 店
+baseurl: /
+url: "https://{{username}}.github.io"
+theme: null
+plugins:
+  - jekyll-sitemap
+collections:
+  pages:
+    output: true
+  models:
+    output: true
+data:
+  features:
+    - feature: 优质车型
+      text: 品质可靠，服务周到
+    - feature: 专业维修
+      text: 经验丰富，技术过硬
+    - feature: 贴心服务
+      text: 热情周到，客户至上
+  contacts:
+    - name: 地址
+      value: 内蒙古自治区乌兰察布市
+    - name: 电话
+      value: 0474-12345678
+    - name: 邮箱
+      value: sales@yuejin4s.com
+    - name: 微信
+      value: yuejin4s

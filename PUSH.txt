@@ -1,0 +1,4 @@
+# 一键部署命令
+cd /media/z640/Data_WD2T/openclaw/workspace/ulanchab-4s
+git checkout master
+git push -u origin master:gh-pages
