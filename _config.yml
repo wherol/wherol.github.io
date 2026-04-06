@@ -2,7 +2,7 @@ title: 乌兰察布跃进卡车 4S 店
 description: 专业提供跃进卡车销售、维修、保养服务
 author: 跃进 4S 店
 baseurl: /
-url: "https://{{username}}.github.io"
+url: "https://wherol.github.io"
 theme: null
 plugins:
   - jekyll-sitemap
